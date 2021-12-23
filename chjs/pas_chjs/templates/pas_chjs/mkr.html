@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>{{ mkr_name.name }}</title>
 </head>
 <body>
 <header>
@@ -86,8 +86,8 @@ nav ul {
         <li><a href="/">Главная</a></li>
         <li><a href="" class="submenu-link">Микрорайоны</a>
           <ul class="submenu">
-              {% for name in mkr_name %}
-              <li><a href="/mkr_name/{{ name.pk }}">{{ name.name }}</a></li>
+              {% for name in mkr_names %}
+              <li><a href="/mkr_name/{{ name.id }}">{{ name.name }}</a></li>
               {% endfor %}
           </ul>
         </li>
