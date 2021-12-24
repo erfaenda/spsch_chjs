@@ -79,6 +79,33 @@ nav ul {
   opacity: 10;
   transform: scaleY(1);
 }
+a {
+  text-decoration:none;
+  decoration:none;
+}
+.table{
+	border: 1px solid #eee;
+	table-layout: fixed;
+	width: 90%;
+	margin-bottom: 20px;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #8FBC8F;
+	border: 1px solid #dddddd;
+}
+.table td{
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	text-align: left;
+}
+.table tbody tr:nth-child(odd){
+	background: #F5FFFA;
+}
+.table tbody tr:nth-child(even){
+	background: #FFFFFF;
+}
 </style>
 
   <nav>
@@ -97,7 +124,7 @@ nav ul {
     </nav>
 </header>
 
-        <table width="85%" bgcolor="#F0FFF0" cellspacing="0" cellpadding="3" border="3" align="center">
+        <table class="table" width="85%" bgcolor="#F0FFF0" cellspacing="0" cellpadding="3" border="3" align="center">
             <caption><h2></h2></caption>
             <tr align="center">
                 <th>№ п/п</th>
@@ -111,7 +138,8 @@ nav ul {
     {% for pas in pas_chjs %}
         <tr>
             <td align="center"><a href="/pas/{{ pas.pk }}">{{ pas.pas_number }}</a></td>
-            <td align="center"><a href="/mkr_name/{{ pas.mkr_name_pas.pk }}">{{ pas.mkr_name_pas }}</a></td>
+            <!-- <td align="center"><a href="/mkr_name/{{ pas.mkr_name_pas.pk }}">{{ pas.mkr_name_pas }}</a></td>-->
+            <td align="center"><a class="text" href="/pas/{{ pas.pk }}">{{ pas.mkr_name_pas }}</a>
             <td align="center">{{ pas.pas_adress }}</td>
             <td align="center">{{ pas.woker_mchs }}</td>
             <td align="center">{{ pas.owner_name }}</td>

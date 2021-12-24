@@ -6,8 +6,10 @@ class Pas_chjs(models.Model):
      pas_adress = models.CharField(max_length=350, verbose_name='Адрес')
      stages = models.IntegerField(blank=True, verbose_name='Этажность')
      walls_material = models.ForeignKey('Materials_walls', on_delete=models.PROTECT, null=True, verbose_name='Стены', blank=True)
+     type_heat = models.ForeignKey('Type_heat', on_delete=models.PROTECT, null=True, verbose_name='Вид отопления')
      electric = models.BooleanField(default=True, verbose_name='Электрофицирован')
      apis = models.IntegerField(default=0, verbose_name='АПИ')
+     apis_works = models.IntegerField(default=0, verbose_name='АПИ исправны')
      living = models.IntegerField(default=0, verbose_name='Проживает')
      childrens = models.IntegerField(default=0, verbose_name='Дети')
      characteristic = models.TextField(blank=True, verbose_name='Характеристика')
@@ -18,6 +20,7 @@ class Pas_chjs(models.Model):
      unfineshed = models.BooleanField(default=False, verbose_name='Недострой')
      created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
      created_update = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
+
 
      def __str__(self):
          #str_pas_number = str(self.pas_number)
@@ -47,4 +50,14 @@ class Materials_walls(models.Model):
      class Meta:
           verbose_name = 'Материал'
           verbose_name_plural = 'Материалы'
+          #ordering = ['-created_at']
+
+class Type_heat(models.Model):
+     name = models.CharField(max_length=150, db_index=True, verbose_name='Вид отопления')
+     def __str__(self):
+          return self.name
+
+     class Meta:
+          verbose_name = 'Вид отопления'
+          verbose_name_plural = 'Виды отопления'
           #ordering = ['-created_at']

@@ -10,3 +10,4 @@ class Pas_chjs_admin(admin.ModelAdmin):
 admin.site.register(Mkr_name)
 admin.site.register(Materials_walls)
 admin.site.register(Pas_chjs, Pas_chjs_admin)
+admin.site.register(Type_heat)

@@ -27,7 +27,7 @@
 </head>
 {% for pas in pas_chjs %}
 <body lang="ru-RU" dir="ltr"><h1 class="western"><font size="4" style="font-size: 16pt">Паспорт
-безопасности индивидуального жилого дома № </font>
+безопасности индивидуального жилого дома №{{ pas.pas_number }} </font>
 </h1>
 <table width="680" cellpadding="7" cellspacing="0">
 	<col width="260"/>
@@ -102,7 +102,7 @@
 			печное, газовое, электрическое)</span></i></h1>
 		</td>
 		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
-			VIDOTOPL</h1>
+			{{ pas.type_heat }}</h1>
 		</td>
 	</tr>
 	<tr>
@@ -113,7 +113,8 @@
 			<font size="4" style="font-size: 14pt">Электрифицирован</font></h1>
 		</td>
 		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
-			{{ pas.electric }}</h1>
+			{% if pas.electric == True %}Да{% else %}Нет{% endif %}
+		</h1>
 		</td>
 	</tr>
 	<tr>
@@ -138,7 +139,7 @@
 			АПИ </span></font><i><span style="font-weight: normal">(количество)</span></i></h1>
 		</td>
 		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
-			WORKAPISSS</h1>
+			{{ pas.apis_works }}</h1>
 		</td>
 	</tr>
 	<tr>
