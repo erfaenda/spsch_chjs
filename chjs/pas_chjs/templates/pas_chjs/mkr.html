@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{{ mkr_name.name }}</title>
 </head>
-<body>
+<body link="#0000FF" vlink="#0000FF" alink="#0000FF">
 <header>
 <style>
 * { box-sizing: border-box; }
@@ -137,8 +137,8 @@ a {
             </tr>
     {% for pas in pas_chjs %}
         <tr>
-            <td align="center">{{ pas.pas_number }}</td>
-            <td align="center">{{ pas.mkr_name_pas }}</td>
+            <td align="center"><a href="/pas/{{ pas.pk }}">{{ pas.pas_number }}</a></td>
+            <td align="center"><a href="/pas/{{ pas.pk }}">{{ pas.mkr_name_pas }}</a></td>
             <td align="center">{{ pas.pas_adress }}</td>
             <td align="center">{{ pas.woker_mchs }}</td>
             <td align="center">{{ pas.owner_name }}</td>
