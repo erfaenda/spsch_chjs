@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Windows)"/>
+	<meta name="author" content="УНД (Грачев)"/>
+	<meta name="created" content="2021-12-23T03:25:00"/>
+	<meta name="changed" content="2021-12-24T11:01:23.946000000"/>
+	<meta name="AppVersion" content="14.0000"/>
+	<style type="text/css">
+		@page { margin-left: 2cm; margin-right: 0.9cm; margin-top: 0.9cm; margin-bottom: 0.9cm }
+		td p { text-indent: 1.27cm; margin-bottom: 0.25cm; background: transparent; direction: ltr; line-height: 115%; text-align: justify; orphans: 0; widows: 0 }
+		td p.western { font-family: "Times New Roman CYR", serif; font-size: 12pt }
+		td p.ctl { font-family: "Times New Roman CYR"; font-size: 12pt }
+		h1 { margin-top: 0.19cm; margin-bottom: 0.19cm; background: transparent; direction: ltr; color: #26282f; line-height: 100%; text-align: center; orphans: 0; widows: 0 }
+		h1.western { font-family: "Times New Roman CYR", serif; font-size: 12pt }
+		h1.ctl { font-family: "Times New Roman CYR"; font-size: 12pt }
+		p { text-indent: 1.27cm; margin-bottom: 0.25cm; background: transparent; direction: ltr; line-height: 115%; text-align: justify; orphans: 0; widows: 0 }
+		p.western { font-family: "Times New Roman CYR", serif; font-size: 12pt }
+		p.ctl { font-family: "Times New Roman CYR"; font-size: 12pt }
+		p.sdfootnote-western { margin-left: 0.6cm; text-indent: 1.27cm; margin-bottom: 0cm; direction: inherit; font-family: "Times New Roman CYR", serif; font-size: 10pt; line-height: 100%; text-align: left }
+		p.sdfootnote-cjk { margin-left: 0.6cm; text-indent: 1.27cm; margin-bottom: 0cm; direction: inherit; font-size: 10pt; so-language: ru-RU; line-height: 100%; text-align: left }
+		p.sdfootnote-ctl { margin-left: 0.6cm; text-indent: 1.27cm; margin-bottom: 0cm; direction: inherit; font-family: "Times New Roman CYR"; font-size: 10pt; line-height: 100%; text-align: left }
+		a:link { so-language: zxx }
+	</style>
+</head>
+{% for pas in pas_chjs %}
+<body lang="ru-RU" dir="ltr"><h1 class="western"><font size="4" style="font-size: 16pt">Паспорт
+безопасности индивидуального жилого дома № </font>
+</h1>
+<table width="680" cellpadding="7" cellspacing="0">
+	<col width="260"/>
+
+	<col width="392"/>
+
+	<tr valign="top">
+		<td width="260" style="border: none; padding: 0cm"><h1 class="western" align="justify" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 16pt">расположенного по адресу:</font></h1>
+		</td>
+		<td width="392" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><h1 class="western" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 16pt">{{ pas.mkr_name_pas }}, {{ pas.pas_adress }}</font></h1>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" width="666" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><h1 class="western" style="orphans: 0; widows: 0">
+			<br/>
+
+			</h1>
+		</td>
+	</tr>
+</table>
+<h1 class="western"><br/>
+<br/>
+
+</h1>
+<p class="western" align="center" style="margin-bottom: 0cm; line-height: 100%">
+<font size="4" style="font-size: 16pt"><b>Краткая характеристика
+жилого дома</b></font></p>
+<p class="western" align="center" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<table width="680" cellpadding="7" cellspacing="0">
+	<col width="23"/>
+
+	<col width="270"/>
+
+	<col width="344"/>
+
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">1.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">Этажность</font></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			{{ pas.stages }}</h1>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="23" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">2.</font></h1>
+		</td>
+		<td width="270" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt"><span style="font-weight: normal">Стены
+			</span></font><i><span style="font-weight: normal">(кирпичные,
+			деревянные)</span></i></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			{{ pas.walls_material }}</h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" height="28" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">3.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt"><span style="font-weight: normal">Вид
+			отопления </span></font><i><span style="font-weight: normal">(централизованное,
+			печное, газовое, электрическое)</span></i></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			{{ </h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">4.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">Электрифицирован</font></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			ELECTRICITY</h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">5.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt"><span style="font-weight: normal">Наличие
+			автономных пожарных извещателей </span></font><i><span style="font-weight: normal">(АПИ)
+			(количество)</span></i></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			APISSSSSSS</h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">6.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt"><span style="font-weight: normal">Исправность
+			АПИ </span></font><i><span style="font-weight: normal">(количество)</span></i></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			WORKAPISSS</h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">7.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">Количество проживающих,</font></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			LIVING</h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">7.1</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">в том числе детей</font></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			CHILDRE</h1>
+		</td>
+	</tr>
+	<tr>
+		<td width="23" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" style="font-weight: normal; orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt">8.</font></h1>
+		</td>
+		<td width="270" valign="top" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 class="western" align="justify" style="orphans: 0; widows: 0">
+			<font size="4" style="font-size: 14pt"><span style="font-weight: normal">Характеристика
+			проживающих </span></font><i><span style="font-weight: normal">(благополучная
+			семья, многодетная семья, семья, </span></i><font color="#000000"><i><span style="font-weight: normal">находящихся
+			в социально опасном положении</span></i></font><i><span style="font-weight: normal">,
+			семья, </span></i><font color="#000000"><i><span style="font-weight: normal">попавшая
+			в&nbsp;иную трудную жизненную ситуацию</span></i></font><i><span style="font-weight: normal">,
+			</span></i><font color="#000000"><i><span style="font-weight: normal">одинокие
+			граждане пожилого возраста и инвалиды</span></i></font><i><span style="font-weight: normal">)</span></i></h1>
+		</td>
+		<td width="344" style="border: 1px solid #000000; padding: 0.05cm 0.19cm"><h1 lang="en-US" class="western" style="orphans: 0; widows: 0">
+			HARAKTER</h1>
+		</td>
+	</tr>
+</table>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<table width="683" cellpadding="7" cellspacing="0">
+	<col width="279"/>
+
+	<col width="5"/>
+
+	<col width="130"/>
+
+	<col width="12"/>
+
+	<col width="118"/>
+
+	<col width="56"/>
+
+	<tr valign="top">
+		<td width="279" height="11" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p lang="en-US" class="western" style="text-indent: 0cm; orphans: 0; widows: 0">
+			OWNER</p>
+		</td>
+		<td width="5" style="border: none; padding: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="130" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="12" style="border: none; padding: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="118" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p lang="en-US" class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			OWDATA</p>
+		</td>
+		<td width="56" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="right" style="text-indent: 0cm; orphans: 0; widows: 0">
+			20___ г.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="279" valign="top" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<font face="Times New Roman, serif">(</font><font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">Ф.И.О.
+			собственника жилого дома)</font></font></p>
+		</td>
+		<td width="5" valign="top" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="130" valign="top" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">(подпись)</font></font></p>
+		</td>
+		<td width="12" valign="top" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td colspan="2" width="188" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">(дата)</font></font></p>
+			<p class="western" align="center" style="orphans: 0; widows: 0"><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="279" height="8" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			Москвин К.Д.</p>
+		</td>
+		<td width="5" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="130" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="12" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="118" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p lang="en-US" class="western" align="center" style="orphans: 0; widows: 0">
+			MCHSDATA</p>
+		</td>
+		<td width="56" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm"><p class="western" style="text-indent: 0cm; orphans: 0; widows: 0">
+			20___ г.</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="279" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">(Ф.И.О.,
+			должность лица, проводившего профобследование)</font></font></p>
+		</td>
+		<td width="5" style="border: none; padding: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td width="130" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">(подпись)</font></font></p>
+		</td>
+		<td width="12" style="border: none; padding: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<br/>
+
+			</p>
+		</td>
+		<td colspan="2" width="188" style="border-top: 1px solid #000000; border-bottom: none; border-left: none; border-right: none; padding-top: 0.05cm; padding-bottom: 0cm; padding-left: 0cm; padding-right: 0cm"><p class="western" align="center" style="text-indent: 0cm; orphans: 0; widows: 0">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 10pt">(дата)</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><sup><font size="2" style="font-size: 10pt">1</font></sup><font size="2" style="font-size: 10pt">Данный
+проверочный лист заполняется по информации собственника, на
+добровольной основе, для оценки состояния пожарной безопасности
+жилого дома в целях предотвращения угрозы жизни и здоровью граждан. </font>
+</p>
+<p class="sdfootnote-western" style="margin-bottom: 0.5cm"><sup>2</sup>Указывается:
+&quot;да&quot;, &quot;нет&quot; либо &quot;н/р&quot; - в случае, если
+требование к жилому дому не распространяется.</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+{% endfor %}
+</p>
+</body>
+</html>

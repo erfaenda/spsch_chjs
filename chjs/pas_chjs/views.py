@@ -21,6 +21,16 @@ def get_mkr_name(request, mkr_name_pas_id):
     mkr_name = Mkr_name.objects.get(pk=mkr_name_pas_id)
     return render(request, 'pas_chjs/mkr.html', {'pas_chjs': pas_chjs, 'mkr_names': mkr_names,
                                                  'mkr_name': mkr_name, })
+def get_pas(request, id):
+    pas_chjs = Pas_chjs.objects.filter(id=id)
+    #pas_all = Pas_chjs.objects.all()
+    id_pas = Pas_chjs.objects.get(pk=id)
+    context = {
+        'pas_chjs': pas_chjs,
+        'id_pas': id_pas,
+        #'pas_all': pas_all,
+    }
+    return render(request, 'pas_chjs/blank_chjs.html', context)
 
 
 

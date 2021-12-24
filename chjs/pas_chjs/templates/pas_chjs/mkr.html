@@ -115,8 +115,8 @@ nav ul {
             <td align="center">{{ pas.pas_adress }}</td>
             <td align="center">{{ pas.woker_mchs }}</td>
             <td align="center">{{ pas.owner_name }}</td>
-            <td align="center">{{ pas.woker_date }}</td>
-            <td align="center">{{ pas.created_at|date:"d-m-y H:i" }}</td>
+            <td align="center">{{ pas.woker_date|date:"d-M-Y" }}</td>
+            <td align="center">{{ pas.created_at|date:"d-M-Y" }}</td>
       </tr>
     {% endfor %}
     </table>
