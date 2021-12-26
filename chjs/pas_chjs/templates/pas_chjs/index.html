@@ -110,15 +110,15 @@ a {
 
   <nav>
       <ul class="topmenu">
-        <li><a href="/">Главная</a></li>
+        <li><a href="{% url 'main' %}">Главная</a></li>
         <li><a href="" class="submenu-link">Микрорайоны</a>
           <ul class="submenu">
               {% for name in mkr_name %}
-              <li><a href="/mkr_name/{{ name.pk }}">{{ name.name }}</a></li>
+              <li><a href="{% url 'mkr' name.pk %}">{{ name.name }}</a></li>
               {% endfor %}
           </ul>
         </li>
-        <li><a href="/admin/pas_chjs/pas_chjs/add/">+Новый</a></li>
+        <li><a href="{% url 'add_pas' %}">+Новый</a></li>
         <li><a href="/admin">Админка</a></li>
       </ul>
     </nav>
@@ -137,9 +137,9 @@ a {
             </tr>
     {% for pas in pas_chjs %}
         <tr>
-            <td align="center"><a href="/pas/{{ pas.pk }}">{{ pas.pas_number }}</a></td>
+            <td align="center"><a href="{% url 'pas' pas.pk %}">{{ pas.pas_number }}</a></td>
             <!-- <td align="center"><a href="/mkr_name/{{ pas.mkr_name_pas.pk }}">{{ pas.mkr_name_pas }}</a></td>-->
-            <td align="center"><a class="text" href="/pas/{{ pas.pk }}">{{ pas.mkr_name_pas }}</a>
+            <td align="center"><a class="text" href="{% url 'main' %}">{{ pas.mkr_name_pas }}</a>
             <td align="center">{{ pas.pas_adress }}</td>
             <td align="center">{{ pas.woker_mchs }}</td>
             <td align="center">{{ pas.owner_name }}</td>

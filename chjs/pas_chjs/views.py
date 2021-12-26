@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import PasForm
 
 from .models import *
 
@@ -31,6 +32,13 @@ def get_pas(request, id):
         #'pas_all': pas_all,
     }
     return render(request, 'pas_chjs/blank_chjs.html', context)
+
+def add_pas(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = PasForm()
+    return render(request, 'pas_chjs/add_pas.html', {'form': form})
 
 
 
