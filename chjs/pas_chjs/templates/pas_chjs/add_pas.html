@@ -20,6 +20,20 @@
             {{ form.pas_number.errors }}
         </div>
     </div>
+    <div class="mb-3">
+        <label for="{{ form.mkr_name_pas.id_for_lable }}" class="form-label">Район:</label>
+        {{ form.mkr_name_pas }}
+        <div class="invalid-feedback">
+            {{ form.mkr_name_pas.errors }}
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="{{ form.pas_adress.id_for_lable }}" class="form-label">Адрес объекта:</label>
+        {{ form.pas_adress }}
+        <div class="invalid-feedback">
+            {{ form.pas_adress.errors }}
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary btn-block">Добавить паспорт</button>
 </form>
 </body>
