@@ -6,16 +6,100 @@
     <title>Добавление паспорта</title>
 </head>
 <body>
-Добавление паспорта ЧЖС:
+<div class="container"><b><br>Добавление паспорта ЧЖС:</b>
+</div>
 <br>
 <form action="{% url 'add_pas' %}" method="post">
     {% csrf_token %}
     {% comment %}
     {{ form.as_p }}
     {% endcomment %}
-    <div class="mb-3">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="{{ form.pas_number.id_for_lable }}" class="form-label">Номер паспорта:</label>
+            {{ form.pas_number }}
+        </div>
+        <div class="col-lg-3">
+            <label for="{{ form.mkr_name_pas.id_for_lable }}" class="form-label">Район:</label>
+            {{ form.mkr_name_pas }}
+        </div>
+        <div class="col-lg-4">
+            <label for="{{ form.pas_adress.id_for_lable }}" class="form-label">Адрес объекта:</label>
+            {{ form.pas_adress }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="{{ form.stages.id_for_lable }}" class="form-label">Этажность:</label>
+            {{ form.stages }}
+        </div>
+        <div class="col-lg-3">
+            <label for="{{ form.walls_material.id_for_lable }}" class="form-label">Материал стен:</label>
+            {{ form.walls_material }}
+        </div>
+        <div class="col-lg-4">
+            <label for="{{ form.type_heat.id_for_lable }}" class="form-label">Тип отопления:</label>
+            {{ form.type_heat }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="{{ form.apis.id_for_lable }}" class="form-label">Наличие АПИ:</label>
+            {{ form.apis }}
+        </div>
+        <div class="col-lg-3">
+            <label for="{{ form.apis_works.id_for_lable }}" class="form-label">Исправные АПИ:</label>
+            {{ form.apis_works }}
+        </div>
+        <div class="col-lg-4">
+            <label for="{{ form.electric.id_for_lable }}" class="form-label">Электрофицирован:</label>
+            {{ form.electric }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="{{ form.living.id_for_lable }}" class="form-label">Кол-во жильцов:</label>
+            {{ form.living }}
+        </div>
+        <div class="col-lg-3">
+            <label for="{{ form.childrens.id_for_lable }}" class="form-label">Дети:</label>
+            {{ form.childrens }}
+        </div>
+        <div class="col-lg-4">
+            <label for="{{ form.characteristic.id_for_lable }}" class="form-label">Характеристика проживающих:</label>
+            {{ form.characteristic }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="{{ form.owner_name.id_for_lable }}" class="form-label">Имя собственника:</label>
+            {{ form.owner_name }}
+        </div>
+        <div class="col-lg-3">
+            <label for="{{ form.date_owner.id_for_lable }}" class="form-label">Дата:</label>
+            <!--<label for="date">Дата рождения: </label>
+            <input type="date" id="date" name="date"/> -->
+            {{ form.date_owner }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="{{ form.woker.mchs.id_for_lable }}" class="form-label">Имя собственника:</label>
+            {{ form.woker_mchs }}
+        </div>
+        <div class="col-lg-3">
+            <label for="{{ form.woker_date.id_for_lable }}" class="form-label">Дата:</label>
+            <!--<label for="date">Дата рождения: </label>
+            <input type="date" id="date" name="date"/> -->
+            {{ form.woker_date }}
+        </div>
+    </div>
+        <br><button type="submit" class="btn btn-primary btn-block">Добавить паспорт</button>
+</div>
+    <!--<div class="mb-3">
         <label for="{{ form.pas_number.id_for_lable }}" class="form-label">Номер паспорта объекта:</label>
-        {{ form.pas_number }}
+        <div style="width:100px, ">{{ form.pas_number }}</div>
         <div class="invalid-feedback">
             {{ form.pas_number.errors }}
         </div>
@@ -33,8 +117,8 @@
         <div class="invalid-feedback">
             {{ form.pas_adress.errors }}
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary btn-block">Добавить паспорт</button>
+    </div> -->
+
 </form>
 </body>
 </html>
