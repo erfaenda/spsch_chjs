@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.db.models import *
 from django.http import HttpResponse
 from .forms import PasForm
 
@@ -34,11 +35,18 @@ def get_pas(request, id):
     return render(request, 'pas_chjs/blank_chjs.html', context)
 
 def add_pas(request):
+    test = Pas_chjs.objects.aggregate(Max('pas_number'))
+    max_pas = test['pas_number__max']
+    print(test['pas_number__max'])
     if request.method == 'POST':
-        pass
+        form = PasForm(request.POST)
+        if form.is_valid():
+            Pas_chjs.objects.create(**form.cleaned_data)
+            return redirect('main')
+            #print(form.cleaned_data)
     else:
         form = PasForm()
-    return render(request, 'pas_chjs/add_pas.html', {'form': form})
+    return render(request, 'pas_chjs/add_pas.html', {'form': form, 'max_pas': max_pas,})
 
 
 

@@ -6,7 +6,7 @@
     <title>Добавление паспорта</title>
 </head>
 <body>
-<div class="container"><b><br>Добавление паспорта ЧЖС:</b>
+<div class="container"><b><br>Добавление паспорта ЧЖС: Сейчас максимальный номер в базе = {{ max_pas }}</b>
 </div>
 <br>
 <form action="{% url 'add_pas' %}" method="post">
@@ -73,7 +73,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2">
-            <label for="{{ form.owner_name.id_for_lable }}" class="form-label">Имя собственника:</label>
+            <label for="{{ form.owner_name.id_for_lable }}" class="form-label">ФИО собственника:</label>
             {{ form.owner_name }}
         </div>
         <div class="col-lg-3">
@@ -85,7 +85,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2">
-            <label for="{{ form.woker.mchs.id_for_lable }}" class="form-label">Имя собственника:</label>
+            <label for="{{ form.woker.mchs.id_for_lable }}" class="form-label">ФИО Сотрудника:</label>
             {{ form.woker_mchs }}
         </div>
         <div class="col-lg-3">
