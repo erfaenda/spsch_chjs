@@ -55,7 +55,7 @@ class Search(ListView):
     paginate_by = 10000
 
     def get_queryset(self):
-        return Pas_chjs.objects.filter(pas_adress__icontains=self.request.GET.get('s'))
+        return Pas_chjs.objects.filter(pas_adress__icontains=self.request.GET.get('s'),)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
