@@ -115,10 +115,8 @@ a {
           </li>
           <li><a href="{% url 'add_pas' %}">+Новый</a></li>
           <li><a href="/admin">Админка</a></li>
-          <li><form action="{% url 'search' %}" method="get">
-                  <p><input type="text" name="s" size="50" placeholder="Поиск паспорта">
-              </form>
-          </li>
+
+
       </ul>
     </nav>
 </header>
@@ -134,7 +132,7 @@ a {
                 <th>Дата проведения</th>
                 <th>Редактирование</th>
             </tr>
-    {% for pas in pas_chjs %}
+    {% for pas in object_list %}
         <tr>
             <td align="center"><a href="{% url 'pas' pas.pk %}"><input type="button" value="{{ pas.pas_number }}"></a></td>
             <!-- <td align="center"><a href="/mkr_name/{{ pas.mkr_name_pas.pk }}">{{ pas.mkr_name_pas }}</a></td>-->
