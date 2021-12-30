@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+from django.contrib.admin.widgets import AdminDateWidget
 
 class PasForm(forms.Form):
     pas_number = forms.IntegerField(label='Номер паспорта объекта', widget=forms.NumberInput(attrs={"class": "form-control"}))
@@ -15,9 +16,9 @@ class PasForm(forms.Form):
     childrens = forms.IntegerField(label='Дети', initial=0, widget=forms.NumberInput(attrs={"class": "form-control"}))
     characteristic = forms.CharField(label='Характеристика проживающих', required=False, widget=forms.Textarea(attrs={"class": "form-control", "rows": 5}))
     owner_name = forms.CharField(label='Собственник', max_length=350, widget=forms.TextInput(attrs={"class": "form-control"}))
-    date_owner = forms.DateField(label='Дата', widget=forms.DateInput(attrs={"class": "form-control"}))
+    date_owner = forms.DateField(label='Дата', widget=forms.widgets.DateInput(attrs={'type': 'date'}))
     woker_mchs = forms.CharField(label='Сотрудник проводивший профобследование', max_length=350, widget=forms.TextInput(attrs={"class": "form-control"}))
-    woker_date = forms.DateField(label='Дата', widget=forms.DateInput(attrs={"class": "form-control"}))
+    woker_date = forms.DateField(label='Дата', widget=forms.widgets.DateInput(attrs={'type': 'date'}))
     #unfineshed = forms.BooleanField(label='Не достроен?', initial=True)
     '''created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
     created_update = models.DateTimeField(auto_now=True, verbose_name='Обновлено')'''
