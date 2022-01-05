@@ -3,6 +3,7 @@ from django.db.models import *
 from django.http import HttpResponse
 from .forms import PasForm
 from django.views.generic import ListView
+from django.core.paginator import Paginator
 
 from .models import *
 
@@ -10,11 +11,17 @@ def index(request):
     pas_chjs = Pas_chjs.objects.all()
     mkr_name = Mkr_name.objects.all()
     materials_walls = Materials_walls.objects.all()
+    objects = Pas_chjs.objects.all()
+    paginator = Paginator(objects, 4)
+    page_num = request.GET.get('page', 1)
+    page_objects = paginator.get_page(page_num)
+
     context = {
         'pas_chjs': pas_chjs,
         'title': 'Список паспортов ЧЖС',
         'mkr_name': mkr_name,
         'materials_wals': materials_walls,
+        'page_obj': page_objects,
     }
     return render(request, 'pas_chjs/index.html', context)
 
