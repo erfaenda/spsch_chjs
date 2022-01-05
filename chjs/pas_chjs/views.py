@@ -59,7 +59,7 @@ def add_pas(request):
 class Search(ListView):
     template_name = 'pas_chjs/search.html'
     context_object_name = 'pas_chjs'
-    paginate_by = 10000
+    paginate_by = 1000
 
     def get_queryset(self):
         return Pas_chjs.objects.filter(pas_adress__icontains=self.request.GET.get('s'),)
