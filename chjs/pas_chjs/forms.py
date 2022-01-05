@@ -1,6 +1,5 @@
 from django import forms
 from .models import *
-from django.contrib.admin.widgets import AdminDateWidget
 
 class PasForm(forms.Form):
     pas_number = forms.IntegerField(label='Номер паспорта объекта', widget=forms.NumberInput(attrs={"class": "form-control"}))
