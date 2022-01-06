@@ -6,10 +6,12 @@
     <title>Добавление паспорта</title>
 </head>
 <body>
-<div class="container"><b><br>Добавление паспорта ЧЖС: Сейчас максимальный номер в базе = {{ max_pas }}</b>
+<div class="container"><b><br>Добавление паспорта ЧЖС: Сейчас максимальный номер в базе = </b>
 </div>
 <br>
-<form action="{% url 'add_pas' %}" method="post">
+{% for pas in pas_chjs %}
+<form action="{% url 'pas-edit' pas.id %}" method="post">
+
     {% csrf_token %}
     {% comment %}
     {{ form.as_p }}
@@ -26,6 +28,7 @@
         </div>
         <div class="col-lg-4">
             <label for="{{ form.pas_adress.id_for_lable }}" class="form-label">Адрес объекта:</label>
+            <input type="text" name="pas_adress" value="{{ pas.pas_adress }}" />
             {{ form.pas_adress }}
         </div>
     </div>
@@ -96,29 +99,8 @@
         </div>
     </div>
         <br><button type="submit" class="btn btn-primary btn-block">Добавить паспорт</button>
+{% endfor %}
 </div>
-    <!--<div class="mb-3">
-        <label for="{{ form.pas_number.id_for_lable }}" class="form-label">Номер паспорта объекта:</label>
-        <div style="width:100px, ">{{ form.pas_number }}</div>
-        <div class="invalid-feedback">
-            {{ form.pas_number.errors }}
-        </div>
-    </div>
-    <div class="mb-3">
-        <label for="{{ form.mkr_name_pas.id_for_lable }}" class="form-label">Район:</label>
-        {{ form.mkr_name_pas }}
-        <div class="invalid-feedback">
-            {{ form.mkr_name_pas.errors }}
-        </div>
-    </div>
-    <div class="mb-3">
-        <label for="{{ form.pas_adress.id_for_lable }}" class="form-label">Адрес объекта:</label>
-        {{ form.pas_adress }}
-        <div class="invalid-feedback">
-            {{ form.pas_adress.errors }}
-        </div>
-    </div> -->
-
 </form>
 </body>
 </html>

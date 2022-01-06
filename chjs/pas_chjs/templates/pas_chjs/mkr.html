@@ -112,7 +112,7 @@ a {
         <li><a href="" class="submenu-link">Микрорайоны</a>
           <ul class="submenu">
               {% for name in mkr_names %}
-              <li><a href="/mkr_name/{{ name.id }}">{{ name.name }}</a></li>
+              <li><a href="{% url 'mkr' name.id %}">{{ name.name }}</a></li>
               {% endfor %}
           </ul>
         </li>

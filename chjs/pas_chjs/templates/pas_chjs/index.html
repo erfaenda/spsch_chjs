@@ -115,7 +115,12 @@ a {
                   {% endfor %}
               </ul>
           </li>
-          <li><a href="{% url 'add_pas' %}">+Новый</a></li>
+           <li><a href="" class="submenu-link">+Новый</a>
+              <ul class="submenu">
+                  <li><a href="{% url 'add_pas' %}">Добавить обьект</a></li>
+                  <li><a href="{% url 'add-mkr' %}">Добавить микрорайон</a></li>
+              </ul>
+          </li>
           <li><a href="/admin">Админка</a></li>
           <li><form action="{% url 'search' %}" method="get">
                   <p><input type="text" name="s" size="50" placeholder="Поиск паспорта по адресу">
@@ -127,7 +132,7 @@ a {
 <!-- Пагинация -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-lg-6">
                 <nav aria-label="...">
                     <ul class="pagination pagination-sm">
                         {% for p in page_obj.paginator.page_range %}
@@ -153,7 +158,6 @@ a {
     {% for pas in page_obj.object_list %}
         <tr>
             <td align="center"><a href="{% url 'pas' pas.pk %}"><input type="button" value="{{ pas.pas_number }}"></a></td>
-            <!-- <td align="center"><a href="/mkr_name/{{ pas.mkr_name_pas.pk }}">{{ pas.mkr_name_pas }}</a></td>-->
             <td align="center"><a href="/pas/{{ pas.pk }}">{{ pas.mkr_name_pas }}</a></td>
             <td align="center">{{ pas.pas_adress }}</td>
             <td align="center">{{ pas.woker_mchs }}</td>

@@ -1,6 +1,15 @@
 from django import forms
 from .models import *
 
+# форма на основе полей модели, быстро, просто, молодежно
+class MkrForm(forms.ModelForm):
+    class Meta:
+        model = Mkr_name
+        fields = ['name']
+        widgets = {
+            'name': forms.TextInput(attrs={"class": "form-control"})
+        }
+
 class PasForm(forms.Form):
     pas_number = forms.IntegerField(label='Номер паспорта объекта', widget=forms.NumberInput(attrs={"class": "form-control"}))
     mkr_name_pas = forms.ModelChoiceField(label='Район', empty_label='Выберите район', queryset=Mkr_name.objects.all(), widget=forms.Select(attrs={"class": "form-control"}))
