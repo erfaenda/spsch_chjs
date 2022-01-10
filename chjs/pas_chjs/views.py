@@ -12,7 +12,7 @@ def index(request):
     mkr_name = Mkr_name.objects.all()
     materials_walls = Materials_walls.objects.all()
     objects = Pas_chjs.objects.all()
-    paginator = Paginator(objects, 4)
+    paginator = Paginator(objects, 100)
     page_num = request.GET.get('page', 1)
     page_objects = paginator.get_page(page_num)
 
@@ -105,6 +105,30 @@ def edit_mkr(request, id):
         form.save()
         return redirect('main')
     return render(request, 'pas_chjs/edit_mkr.html', context)
+
+# Добавление материала через свою форму
+def add_materials_walls(request):
+    if request.method == 'POST':
+        form = MaterialsWallsForm(request.POST)
+        if form.is_valid():
+            #Mkr_name.objects.create(**form.cleaned_data)
+            form.save()
+            return redirect('main')
+    else:
+        form = MaterialsWallsForm()
+    return render(request, 'pas_chjs/add_materials_walls.html', {'form': form})
+
+
+def add_type_heat(request):
+    if request.method == 'POST':
+        form = TypeHeatForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+    else:
+        form = TypeHeatForm()
+    return render(request, 'pas_chjs/add_type_heat.html', {'form': form})
+
 
 class Search(ListView):
     template_name = 'pas_chjs/search.html'

@@ -145,7 +145,7 @@ a {
             <td align="center">{{ pas.woker_mchs }}</td>
             <td align="center">{{ pas.owner_name }}</td>
             <td align="center">{{ pas.woker_date|date:"d-M-Y" }}</td>
-            <td align="center"><a href="/admin/pas_chjs/pas_chjs/{{ pas.pk }}/change/"><input type="button" value="редактировать"></a></td>
+            <td align="center"><a href="{% url 'edit-pas' pas.pk %}"><input type="button" value="редактировать"></a></td>
       </tr>
     {% endfor %}
     </table>

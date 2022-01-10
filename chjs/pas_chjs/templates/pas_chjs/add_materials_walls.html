@@ -4,14 +4,14 @@
 <head>
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <meta charset="UTF-8">
-    <title>Добавление микрорайона</title>
+    <title>Добавление материала</title>
 </head>
 <body>
-<div class="container"><b><br>Добавление микрорайона:</b>
+<div class="container"><b><br>Добавление материала:</b>
 </div>
 
 <br>
-<form action="" method="post">
+<form action="{% url 'add-materials' %}" method="post">
     {% csrf_token %}
     {% comment %}
     {{ form.as_p }}
@@ -19,13 +19,26 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
-            <label for="{{ form.name.id_for_lable }}" class="form-label">Название микрорайона:</label>
+            <label for="{{ form.name.id_for_lable }}" class="form-label">Наименование материала:</label>
             {{ form.name }}
         </div>
     </div>
-        <br><button type="submit" class="btn btn-primary btn-block">Сохранить изменения</button>
+        <br><button type="submit" class="btn btn-primary btn-block">Добавить материал</button>
         <a href="{% url 'main' %}"><input type="button" class="btn btn-primary btn-block" value="На главную"></a>
 </div>
 </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

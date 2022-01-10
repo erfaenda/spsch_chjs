@@ -119,6 +119,8 @@ a {
               <ul class="submenu">
                   <li><a href="{% url 'add_pas' %}">Добавить обьект</a></li>
                   <li><a href="{% url 'add-mkr' %}">Добавить микрорайон</a></li>
+                  <li><a href="{% url 'add-materials' %}">Добавить материал стен</a></li>
+                  <li><a href="{% url 'add-type-heat' %}">Добавить тип отопления</a></li>
               </ul>
           </li>
           <li><a href="/admin">Админка</a></li>
@@ -163,7 +165,7 @@ a {
             <td align="center">{{ pas.woker_mchs }}</td>
             <td align="center">{{ pas.owner_name }}</td>
             <td align="center">{{ pas.woker_date|date:"d-M-Y" }}</td>
-            <td align="center"><a href="/admin/pas_chjs/pas_chjs/{{ pas.pk }}/change/"><input type="button" value="редактировать"></a></td>
+            <td align="center"><a href="{% url 'edit-pas' pas.pk %}"><input type="button" value="редактировать"></a></td>
       </tr>
     {% endfor %}
     </table>
