@@ -11,11 +11,12 @@ def index(request):
     pas_chjs = Pas_chjs.objects.all()
     mkr_name = Mkr_name.objects.all()
     materials_walls = Materials_walls.objects.all()
+    # ниже кусок отвечает за пагинацию
     objects = Pas_chjs.objects.all()
-    paginator = Paginator(objects, 100)
+    paginator = Paginator(objects, 5)
     page_num = request.GET.get('page', 1)
     page_objects = paginator.get_page(page_num)
-
+    ############
     context = {
         'pas_chjs': pas_chjs,
         'title': 'Список паспортов ЧЖС',
@@ -29,8 +30,17 @@ def get_mkr_name(request, mkr_name_pas_id):
     pas_chjs = Pas_chjs.objects.filter(mkr_name_pas_id=mkr_name_pas_id)
     mkr_names = Mkr_name.objects.all()
     mkr_name = Mkr_name.objects.get(pk=mkr_name_pas_id)
-    return render(request, 'pas_chjs/mkr.html', {'pas_chjs': pas_chjs, 'mkr_names': mkr_names,
-                                                 'mkr_name': mkr_name, })
+    objects = Pas_chjs.objects.all()
+    paginator = Paginator(objects, 5)
+    page_num = request.GET.get('page', 1)
+    page_objects = paginator.get_page(page_num)
+    context = {
+        'pas_chjs': pas_chjs,
+        'mkr_name': mkr_name,
+        'mkr_names': mkr_names,
+        'page_obj': page_objects,
+    }
+    return render(request, 'pas_chjs/mkr.html', context)
 
 def get_pas(request, id):
     pas_chjs = Pas_chjs.objects.filter(id=id)
@@ -133,7 +143,7 @@ def add_type_heat(request):
 class Search(ListView):
     template_name = 'pas_chjs/search.html'
     context_object_name = 'pas_chjs'
-    paginate_by = 1000
+    paginate_by = 3
 
     def get_queryset(self):
         return Pas_chjs.objects.filter(pas_adress__icontains=self.request.GET.get('s'),)

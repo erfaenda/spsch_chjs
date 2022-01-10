@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pas_chjs.apps.PasChjsConfig',
+    'bootstrap_pagination',
 ]
 
 MIDDLEWARE = [

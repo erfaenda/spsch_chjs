@@ -132,14 +132,20 @@ a {
     </nav>
 </header>
 <!-- Пагинация -->
+    {% load bootstrap_pagination %}
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <nav aria-label="...">
                     <ul class="pagination pagination-sm">
-                        {% for p in page_obj.paginator.page_range %}
+                        <!-- это дополнение для пагинации от бутстрапа несколько строк и все само работает,
+                        усиановка pip install django-bootstrap-pagination,
+                        вот  гит https://github.com/jmcclell/django-bootstrap-pagination -->
+                        {% bootstrap_paginate page_obj range=5 show_prev_next="false" show_first_last="true" %}
+                        <!-- ниже обычная реализация -->
+                        <!--{% for p in page_obj.paginator.page_range %}
                             <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
-                        {% endfor %}
+                        {% endfor %}-->
                     </ul>
                 </nav>
             </div>
