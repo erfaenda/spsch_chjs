@@ -42,23 +42,33 @@ def get_pas(request, id):
     }
     return render(request, 'pas_chjs/blank_chjs.html', context)
 
-def pas_edit(request, id):
-    pas_chjs = Pas_chjs.objects.filter(id=id)
-    id_pas = Pas_chjs.objects.get(pk=id)
-    context = {
-        'pas_chjs': pas_chjs,
-        'id_pas': id_pas,
-        #'pas_all': pas_all,
-    }
-    if request.method == 'POST':
-        form = PasFormEdit(request.POST)
-        if form.is_valid():
-            Pas_chjs.objects.create(**form.cleaned_data)
-            print(form.cleaned_data)
-            return redirect('main')
-    else:
-        form = PasFormEdit()
-    return render(request, 'pas_chjs/edit_pas.html', {'form': form, 'pas_chjs': pas_chjs, })
+# def pas_edit(request, id):
+#     pas_chjs = Pas_chjs.objects.filter(id=id)
+#     id_pas = Pas_chjs.objects.get(pk=id)
+#     context = {
+#         'pas_chjs': pas_chjs,
+#         'id_pas': id_pas,
+#         #'pas_all': pas_all,
+#     }
+#     if request.method == 'POST':
+#         form = PasFormEdit(request.POST)
+#         if form.is_valid():
+#             Pas_chjs.objects.create(**form.cleaned_data)
+#             print(form.cleaned_data)
+#             return redirect('main')
+#     else:
+#         form = PasFormEdit()
+#     return render(request, 'pas_chjs/edit_pas.html', {'form': form, 'pas_chjs': pas_chjs, })
+
+# Редактривание паспорта через форму
+def edit_pas(request, id):
+    pas_id = Pas_chjs.objects.get(pk=id)
+    form = EditPasForm(request.POST or None, instance=pas_id)
+    context = { 'form': form, }
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        return redirect('main')
+    return render(request, 'pas_chjs/edit_pas.html', context)
 
 # Добавление нового паспорта обьекта через свою форму
 def add_pas(request):
@@ -85,6 +95,16 @@ def add_mkr(request):
     else:
         form = MkrForm()
     return render(request, 'pas_chjs/add_mkr.html', {'form': form})
+
+# Редактирование существущего микрорайона
+def edit_mkr(request, id):
+    mkr_id = Mkr_name.objects.get(pk=id)
+    form = MkrForm(request.POST or None, instance=mkr_id)
+    context = { 'form': form, }
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        return redirect('main')
+    return render(request, 'pas_chjs/edit_mkr.html', context)
 
 class Search(ListView):
     template_name = 'pas_chjs/search.html'

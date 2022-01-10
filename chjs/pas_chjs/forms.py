@@ -10,6 +10,36 @@ class MkrForm(forms.ModelForm):
             'name': forms.TextInput(attrs={"class": "form-control"})
         }
 
+class EditPasForm(forms.ModelForm):
+    class Meta:
+        model = Pas_chjs
+        fields = ['pas_number', 'mkr_name_pas', 'pas_adress', 'stages', 'walls_material', 'type_heat',
+                  'electric', 'apis', 'apis_works', 'living', 'childrens', 'characteristic', 'owner_name',
+                  'date_owner', 'woker_mchs', 'woker_date']
+        widgets = {
+            'pas_number': forms.NumberInput(attrs={"class": "form-control"}),
+            'mkr_name_pas': forms.Select(attrs={"class": "form-control"}),
+            'pas_adress': forms.TextInput(attrs={"class": "form-control"}),
+            'stages': forms.NumberInput(attrs={"class": "form-control"}),
+            'walls_material': forms.Select(attrs={"class": "form-control"}),
+            'type_heat': forms.Select(attrs={"class": "form-control"}),
+            'electric': forms.CheckboxInput(attrs={'style':'width:20px;height:20px;'}),
+            'apis': forms.NumberInput(attrs={"class": "form-control"}),
+            'apis_works': forms.NumberInput(attrs={"class": "form-control"}),
+            'living': forms.NumberInput(attrs={"class": "form-control"}),
+            'childrens': forms.NumberInput(attrs={"class": "form-control"}),
+            'characteristic': forms.Textarea(attrs={"class": "form-control", "rows": 5}),
+            'owner_name': forms.TextInput(attrs={"class": "form-control"}),
+            'date_owner': forms.DateInput(
+                format=('%Y-%m-%d'),
+                attrs={'class': 'form-control', 'placeholder': 'Select a date', 'type': 'date'}),
+            'woker_mchs': forms.TextInput(attrs={"class": "form-control"}),
+            'woker_date': forms.DateInput(
+                format=('%Y-%m-%d'),
+                attrs={'class': 'form-control', 'placeholder': 'Select a date', 'type': 'date'}),
+            # выше виджет даты такого вида потому что надо виджет не коректно понимает формат при редактировании
+        }
+
 class PasForm(forms.Form):
     pas_number = forms.IntegerField(label='Номер паспорта объекта', widget=forms.NumberInput(attrs={"class": "form-control"}))
     mkr_name_pas = forms.ModelChoiceField(label='Район', empty_label='Выберите район', queryset=Mkr_name.objects.all(), widget=forms.Select(attrs={"class": "form-control"}))

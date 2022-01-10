@@ -9,9 +9,8 @@
 <div class="container"><b><br>Добавление паспорта ЧЖС: Сейчас максимальный номер в базе = </b>
 </div>
 <br>
-{% for pas in pas_chjs %}
-<form action="{% url 'pas-edit' pas.id %}" method="post">
 
+<form action="" method="post">
     {% csrf_token %}
     {% comment %}
     {{ form.as_p }}
@@ -28,7 +27,6 @@
         </div>
         <div class="col-lg-4">
             <label for="{{ form.pas_adress.id_for_lable }}" class="form-label">Адрес объекта:</label>
-            <input type="text" name="pas_adress" value="{{ pas.pas_adress }}" />
             {{ form.pas_adress }}
         </div>
     </div>
@@ -81,8 +79,7 @@
         </div>
         <div class="col-lg-3">
             <label for="{{ form.date_owner.id_for_lable }}" class="form-label">Дата:</label>
-            <!--<label for="date">Дата рождения: </label>
-            <input type="date" id="date" name="date"/> -->
+            <br>
             {{ form.date_owner }}
         </div>
     </div>
@@ -93,13 +90,11 @@
         </div>
         <div class="col-lg-3">
             <label for="{{ form.woker_date.id_for_lable }}" class="form-label">Дата:</label>
-            <!--<label for="date">Дата рождения: </label>
-            <input type="date" id="date" name="date"/> -->
+            <br>
             {{ form.woker_date }}
         </div>
     </div>
         <br><button type="submit" class="btn btn-primary btn-block">Добавить паспорт</button>
-{% endfor %}
 </div>
 </form>
 </body>
